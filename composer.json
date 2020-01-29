@@ -1,0 +1,24 @@
+{
+    "name": "laravelrotebal/framework-patches",
+    "description": "A set of patches that fix bugs and improve the functionality of Laravel Framework.",
+    "authors": [
+        {
+            "name": "Krot Eval",
+            "email": "38257723+4n70w4@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "laravel/framework": "v6.6.1",
+        "vaimo/composer-patches": "^4.20"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master"
+    },
+    "extra": {
+        "patches": {
+            "laravel/framework": [
+                "patches/laravel/framework/macroable-call-parent-__call.patch"
+            ]
+        }
+    }
+}
