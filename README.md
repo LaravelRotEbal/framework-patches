@@ -55,3 +55,12 @@ Macroable trait now work with Models.
 Affected files:
 
 - src/Illuminate/Support/Traits/Macroable.php
+
+
+### has-attributes-are-macroable.patch
+
+Some fixes eloquent magic for use macroable. 
+
+Affected files:
+
+- src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php

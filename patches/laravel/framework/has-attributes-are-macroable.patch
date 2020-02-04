@@ -1,0 +1,44 @@
+@package laravel/framework
+
+--- src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php	(date 1580744528578)
++++ vsrc/Illuminate/Database/Eloquent/Concerns/HasAttributes.php	(date 1580744528578)
+@@ -12,6 +12,7 @@
+ use Illuminate\Support\Collection as BaseCollection;
+ use Illuminate\Support\Facades\Date;
+ use Illuminate\Support\Str;
++use Illuminate\Support\Traits\Macroable;
+ use LogicException;
+
+ trait HasAttributes
+@@ -395,6 +396,10 @@
+             return $this->relations[$key];
+         }
+
++        if(isset(class_uses(static::class)[Macroable::class]) && static::hasMacro($key)) {
++            return $this->getRelationshipFromMethod($key);
++        }
++
+         // If the "attribute" exists as a method on the model, we will just assume
+         // it is a relationship and will load and return results from the query
+         // and hydrate the relationship's value on the "relationships" array.
+@@ -440,6 +445,10 @@
+      */
+     public function hasGetMutator($key)
+     {
++        if(isset(class_uses(static::class)[Macroable::class]) && static::hasMacro('get'.Str::studly($key).'Attribute') ) {
++            return static::__call('get'.Str::studly($key).'Attribute', []);
++        }
++
+         return method_exists($this, 'get'.Str::studly($key).'Attribute');
+     }
+
+@@ -605,6 +614,10 @@
+      */
+     public function hasSetMutator($key)
+     {
++        if(isset(class_uses(static::class)[Macroable::class]) && static::hasMacro('set'.Str::studly($key).'Attribute') ) {
++            return static::__call('set'.Str::studly($key).'Attribute', []);
++        }
++
+         return method_exists($this, 'set'.Str::studly($key).'Attribute');
+     }

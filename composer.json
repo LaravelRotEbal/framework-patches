@@ -17,7 +17,8 @@
     "extra": {
         "patches": {
             "laravel/framework": [
-                "patches/laravel/framework/macroable-call-parent-__call.patch"
+                "patches/laravel/framework/macroable-call-parent-__call.patch",
+                "patches/laravel/framework/has-attributes-are-macroable.patch"
             ]
         }
     }
