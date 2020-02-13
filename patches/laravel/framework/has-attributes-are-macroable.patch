@@ -1,7 +1,7 @@
 @package laravel/framework
 
---- src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php	(date 1580744528578)
-+++ vsrc/Illuminate/Database/Eloquent/Concerns/HasAttributes.php	(date 1580744528578)
+--- src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php
++++ src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php
 @@ -12,6 +12,7 @@
  use Illuminate\Support\Collection as BaseCollection;
  use Illuminate\Support\Facades\Date;
@@ -10,7 +10,7 @@
  use LogicException;
 
  trait HasAttributes
-@@ -395,6 +396,10 @@
+@@ -394,6 +395,10 @@
              return $this->relations[$key];
          }
 

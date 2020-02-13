@@ -64,3 +64,12 @@ Some fixes eloquent magic for use macroable.
 Affected files:
 
 - src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php
+
+
+### macroable-has-relationships-belongs-to.patch
+
+Some fixes eloquent magic for use macroable. 
+
+Affected files:
+
+- src/Illuminate/Database/Eloquent/Concerns/HasRelationships.php

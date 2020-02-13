@@ -1,0 +1,14 @@
+@package laravel/framework
+
+--- src/Illuminate/Database/Eloquent/Concerns/HasRelationships.php
++++ src/Illuminate/Database/Eloquent/Concerns/HasRelationships.php
+@@ -173,7 +173,8 @@
+         // the calling method's name and use that as the relationship name as most
+         // of the time this will be what we desire to use for the relationships.
+         if (is_null($relation)) {
+-            $relation = $this->guessBelongsToRelation();
++            $relation = Str::snake(class_basename($related));
++            // $relation = $this->guessBelongsToRelation();
+         }
+
+         $instance = $this->newRelatedInstance($related);
