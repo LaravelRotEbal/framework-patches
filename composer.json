@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "laravel/framework": "^v6.*",
+        "laravel/framework": "v6.*",
         "vaimo/composer-patches": "^4.20"
     },
     "require-dev": {
